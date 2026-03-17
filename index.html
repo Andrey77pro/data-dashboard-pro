@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArtheAdmin - Dashboard</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; }
+    .sidebar { width: 280px; height: 100vh; background: white; border-right: 1px solid #E2E8F0; }
+    .card { background: white; border: 1px solid #E2E8F0; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+    .stat-up { color: #10B981; background: #ECFDF5; }
+    .stat-down { color: #EF4444; background: #FEF2F2; }
+  </style>
+</head>
+<body class="flex">
+  <!-- Sidebar -->
+  <aside class="sidebar fixed left-0 top-0 p-6 flex flex-col">
+    <div class="flex items-center space-x-3 mb-10 px-2">
+      <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+        <i class="fas fa-chart-pie text-white"></i>
+      </div>
+      <span class="text-xl font-bold text-slate-900">ArtheAdmin</span>
+    </div>
+    
+    <nav class="flex-1 space-y-1">
+      <a href="#" class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-semibold">
+        <i class="fas fa-th-large"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="#" class="flex items-center space-x-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition-all">
+        <i class="fas fa-users"></i>
+        <span>Usuarios</span>
+      </a>
+      <a href="#" class="flex items-center space-x-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition-all">
+        <i class="fas fa-wallet"></i>
+        <span>Ingresos</span>
+      </a>
+      <a href="#" class="flex items-center space-x-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition-all">
+        <i class="fas fa-cog"></i>
+        <span>Ajustes</span>
+      </a>
+    </nav>
+
+    <div class="mt-auto p-4 bg-slate-900 rounded-2xl text-white">
+      <p class="text-xs text-slate-400 mb-2">Plan Actual</p>
+      <p class="text-sm font-bold mb-3">Enterprise Pro</p>
+      <button class="w-full py-2 bg-indigo-600 rounded-lg text-xs font-bold hover:bg-indigo-500 transition-all">Mejorar</button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 ml-[280px] p-10">
+    <header class="flex items-center justify-between mb-10">
+      <div>
+        <h1 class="text-2xl font-bold text-slate-900">Bienvenido, Admin</h1>
+        <p class="text-slate-500">Aquí tienes el resumen de hoy, 17 de Marzo.</p>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-white transition-all">
+          <i class="far fa-bell"></i>
+        </button>
+        <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm">
+          <img src="https://picsum.photos/seed/admin/100/100" alt="Avatar" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="card p-6">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <span class="stat-up px-2 py-1 rounded-lg text-xs font-bold">+12.5%</span>
+        </div>
+        <p class="text-slate-500 text-sm mb-1">Ingresos Totales</p>
+        <h2 class="text-2xl font-bold text-slate-900">$45,231.89</h2>
+      </div>
+      <div class="card p-6">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <span class="stat-up px-2 py-1 rounded-lg text-xs font-bold">+8.2%</span>
+        </div>
+        <p class="text-slate-500 text-sm mb-1">Nuevos Clientes</p>
+        <h2 class="text-2xl font-bold text-slate-900">1,284</h2>
+      </div>
+      <div class="card p-6">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <span class="stat-down px-2 py-1 rounded-lg text-xs font-bold">-2.4%</span>
+        </div>
+        <p class="text-slate-500 text-sm mb-1">Ventas Mensuales</p>
+        <h2 class="text-2xl font-bold text-slate-900">852</h2>
+      </div>
+    </div>
+
+    <!-- Activity Table -->
+    <div class="card overflow-hidden">
+      <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+        <h3 class="font-bold text-slate-900">Transacciones Recientes</h3>
+        <button class="text-sm text-indigo-600 font-semibold hover:underline">Ver todas</button>
+      </div>
+      <table class="w-full text-left">
+        <thead class="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider">
+          <tr>
+            <th class="px-6 py-4">Cliente</th>
+            <th class="px-6 py-4">Estado</th>
+            <th class="px-6 py-4">Fecha</th>
+            <th class="px-6 py-4 text-right">Monto</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 text-sm">
+          <tr class="hover:bg-slate-50 transition-all">
+            <td class="px-6 py-4 font-medium text-slate-900">Juan Pérez</td>
+            <td class="px-6 py-4"><span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-[10px] font-bold uppercase">Completado</span></td>
+            <td class="px-6 py-4 text-slate-500">hace 2 horas</td>
+            <td class="px-6 py-4 text-right font-bold text-slate-900">$1,200.00</td>
+          </tr>
+          <tr class="hover:bg-slate-50 transition-all">
+            <td class="px-6 py-4 font-medium text-slate-900">María García</td>
+            <td class="px-6 py-4"><span class="px-2 py-1 bg-amber-100 text-amber-700 rounded-full text-[10px] font-bold uppercase">Pendiente</span></td>
+            <td class="px-6 py-4 text-slate-500">hace 5 horas</td>
+            <td class="px-6 py-4 text-right font-bold text-slate-900">$850.50</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
